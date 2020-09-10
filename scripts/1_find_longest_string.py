@@ -9,8 +9,8 @@ def find_longest_string(list_of_strings):
             longest_string = s
     return longest_string
 
-list_of_strings = ['noSQL', 'python', 'parallel']
+# list_of_strings = ['noSQL', 'python', 'parallel']
 # list_of_strings = ['noSQL', 'python', 'parallel'] * 10000000
-# list_of_strings = ['noSQL', 'python', 'parallel'] * 100000000
+list_of_strings = ['noSQL', 'python', 'parallel'] * 300000000
 
 print(find_longest_string(list_of_strings))

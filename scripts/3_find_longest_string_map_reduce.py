@@ -15,11 +15,11 @@ def reducer(item1, item2):
 
 def find_longest_string_map_reduce(list_of_strings):
 
-    # step 1:
+    # Step 1:
     mapped = map(mapper, list_of_strings)
     mapped = zip(list_of_strings, mapped)
 
-    # step 2:
+    # Step 2:
     reduced = reduce(reducer, mapped)
 
     return reduced

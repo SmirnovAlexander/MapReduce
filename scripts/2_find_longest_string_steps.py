@@ -2,11 +2,11 @@
 
 def find_longest_string_steps(list_of_strings):
 
-    # step 1:
+    # Step 1:
     list_of_string_lens = [len(s) for s in list_of_strings]
     list_of_string_lens = zip(list_of_strings, list_of_string_lens)
 
-    # step 2:
+    # Step 2:
     max_len = max(list_of_string_lens, key=lambda t: t[1])
 
     return max_len
