@@ -18,7 +18,7 @@
 
 % Images.
 \usepackage{graphicx}
-\graphicspath{ {./images/} }
+\graphicspath{{./images/}}
 
 \title{Паттерн «Map-Reduce»}
 \author[Александр Смирнов]{Александр Смирнов}
@@ -156,9 +156,44 @@ reduce(lambda x, y: x if (x > y) else y, [1, 5, 9])
 		\item Большие данные
 		      \begin{itemize}
 			      \item Разбиение на фрагметы неэффективно, поэтому будем хранить данные в виде кусков изначально
-                  \item Hadoop Distributed File System
+			      \item Hadoop Distributed File System
 		      \end{itemize}
 	\end{itemize}
 
 \end{frame}
+
+\begin{frame}
+
+	\frametitle{Устойчивость к сбоям}
+
+	\begin{itemize}
+		\item Так как данных очень много, система должна быть устойчива к сбоям
+		\item Система пингует каждый процесс
+		\item Если процесс не отвечает, задача передаётся на другой процесс
+		\item Результаты reduce-ов сохраняются на диск
+		\item Число операций должно быть гораздо больше числа вычислительных ячеек
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Примеры применений}
+
+	\begin{itemize}
+		\item Подсчёт слов
+		      \begin{itemize}
+			      \item map возвращает кортеж (слово, 1)
+			      \item reduce суммирует все кортежи по словам
+		      \end{itemize}
+		\item Поиск по подстроке
+		      \begin{itemize}
+			      \item map возращает строку, если она содержит подстроку
+			      \item reduce просто копирует строки на вывод
+		      \end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+
 \end{document}
